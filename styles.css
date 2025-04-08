@@ -1,0 +1,453 @@
+/* Main Stylesheet for Festival Combo Shop */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Animation Classes */
+  .festival-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0;
+  }
+  
+  .festival-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-animation {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-animation:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-animation::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease-out, height 0.4s ease-out;
+  }
+  
+  .btn-animation:active::after {
+    width: 300px;
+    height: 300px;
+  }
+  
+  /* Header Styles */
+  .header-shadow {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .search-box {
+    border-radius: 50px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+  }
+  
+  .search-box:focus {
+    border-color: #ec4899;
+    box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.2);
+    outline: none;
+  }
+  
+  /* Navigation Styles */
+  .nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s ease, left 0.3s ease;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+    left: 0;
+  }
+  
+  .dropdown {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  }
+  
+  .dropdown-trigger:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/assets/festival-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.3) 0%, rgba(156, 39, 176, 0.3) 100%);
+  }
+  
+  /* Festival Cards */
+  .card-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ec4899;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .card-image {
+    transition: transform 0.5s ease;
+    overflow: hidden;
+  }
+  
+  .festival-card:hover .card-image img {
+    transform: scale(1.05);
+  }
+  
+  .price-tag {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ec4899;
+  }
+  
+  /* Feature Icons */
+  .feature-icon-container {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: #fce7f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-box:hover .feature-icon-container {
+    transform: scale(1.1);
+  }
+  
+  .feature-icon {
+    font-size: 1.5rem;
+    color: #ec4899;
+  }
+  
+  /* Testimonials */
+  .testimonial-card {
+    border-radius: 8px;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  }
+  
+  .star-rating {
+    color: #fbbf24;
+    margin-bottom: 1rem;
+  }
+  
+  .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #d1d5db;
+    margin-right: 1rem;
+  }
+  
+  /* Newsletter */
+  .newsletter-section {
+    background-color: #ec4899;
+    color: white;
+    padding: 3rem 0;
+  }
+  
+  .newsletter-input {
+    padding: 0.75rem 1rem;
+    border-radius: 4px 0 0 4px;
+    border: none;
+    width: 100%;
+    max-width: 24rem;
+  }
+  
+  .newsletter-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+  }
+  
+  .newsletter-button {
+    background-color: #1f2937;
+    color: white;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .newsletter-button:hover {
+    background-color: #111827;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #1f2937;
+    color: white;
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .footer-heading {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-link {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-link:hover {
+    color: white;
+  }
+  
+  .social-icon {
+    color: #9ca3af;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    color: white;
+    transform: translateY(-2px);
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact-icon {
+    color: #ec4899;
+    margin-right: 0.5rem;
+    margin-top: 0.25rem;
+  }
+  
+  .footer-divider {
+    border-color: #374151;
+    margin: 1.5rem 0;
+  }
+  
+  .copyright {
+    color: #9ca3af;
+    font-size: 0.875rem;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    .grid-cols-3, .grid-cols-4 {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .newsletter-form {
+      flex-direction: column;
+    }
+    
+    .newsletter-input {
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+    }
+    
+    .newsletter-button {
+      border-radius: 4px;
+      width: 100%;
+    }
+    
+    .footer-columns {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .footer-bottom {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .footer-links {
+      margin-top: 1rem;
+    }
+  }
+  
+  /* Additional Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.6s ease forwards;
+  }
+  
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+  
+  /* Custom Festival Card Badges */
+  .diwali-badge {
+    background: linear-gradient(135deg, #ff9a00, #ff5e62);
+  }
+  
+  .holi-badge {
+    background: linear-gradient(135deg, #7367f0, #ce9ffc);
+  }
+  
+  .christmas-badge {
+    background: linear-gradient(135deg, #43a047, #1de9b6);
+  }
+  
+  .eid-badge {
+    background: linear-gradient(135deg, #5e35b1, #1e88e5);
+  }
+  
+  /* Special Offers Styling */
+  .offer-tag {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background-color: #ef4444;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transform: rotate(3deg);
+  }
+  
+  /* Floating cart button for mobile */
+  .floating-cart {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #ec4899;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(236, 72, 153, 0.3);
+    z-index: 100;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .floating-cart:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(236, 72, 153, 0.4);
+  }
+  
+  /* Festival-specific accent colors */
+  .diwali-accent { color: #ff9a00; }
+  .holi-accent { color: #7367f0; }
+  .christmas-accent { color: #43a047; }
+  .eid-accent { color: #5e35b1; }
+  
+  /* Scroll-to-top button */
+  .scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ec4899;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    z-index: 99;
+  }
+  
+  .scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .scroll-top:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Loading spinner animation */
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s linear infinite;
+  }
