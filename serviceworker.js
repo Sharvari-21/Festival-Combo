@@ -1,15 +1,15 @@
 const CACHE_NAME = 'festival-combo-shop-v1';
 const FILES_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/styles.css',
-  '/manifest.json',
-  '/serviceworker.js',
-  '/color.webp',
-  '/diwalisweets.webp',
-  '/holicolors.webp',
-  '/christmas.webp',
-];
+  '/Festival-Combo/',
+  '/Festival-Combo/index.html',
+  '/Festival-Combo/styles.css',
+  '/Festival-Combo/manifest.json',
+  '/Festival-Combo/serviceworker.js',
+  '/Festival-Combo/color.webp',
+  '/Festival-Combo/diwalisweets.webp',
+  '/Festival-Combo/holicolors.webp',
+  '/Festival-Combo/christmas.webp',
+  ];
 // Install Event
 self.addEventListener("install", (event) => {
     console.log("[ServiceWorker] Install");
