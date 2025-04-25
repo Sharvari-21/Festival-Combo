@@ -9,6 +9,8 @@ const FILES_TO_CACHE = [
   '/Festival-Combo/diwalisweets.webp',
   '/Festival-Combo/holicolors.webp',
   '/Festival-Combo/christmas.webp',
+  '/Festival-Combo/icon-192.png',
+  '/Festival-Combo/icon-512.png',
   ];
 // Install Event
 self.addEventListener("install", (event) => {
