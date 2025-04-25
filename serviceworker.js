@@ -5,7 +5,7 @@ const FILES_TO_CACHE = [
   '/Festival-Combo/styles.css',
   '/Festival-Combo/manifest.json',
   '/Festival-Combo/serviceworker.js',
-  '/Festival-Combo/color.webp',
+  '/Festival-Combo/color_new.webp',
   '/Festival-Combo/diwalisweets.webp',
   '/Festival-Combo/holicolors.webp',
   '/Festival-Combo/christmas.webp',
